@@ -48,6 +48,10 @@ button {
   vertical-align: top;
   background: transparent;
 }
+html,
+body {
+  height: 100%;
+}
 :root {
   --baseColor: #d6e5cb;
 }

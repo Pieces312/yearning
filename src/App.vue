@@ -12,5 +12,9 @@ export default {
 
 <style lang="less">
 @import "~@/assets/css/reset.less";
+
+#app {
+  height: 100%;
+}
 </style>
 

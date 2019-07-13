@@ -18,8 +18,18 @@ export default new Router({
     },
     {
       path: '/menu',
-      name: 'menu',
-      component: resolve => require(['@/pages/menu'], resolve)
+      component: resolve => require(['@/pages/menu'], resolve),
+      children: [
+        {
+          path: '',
+          name: 'menu',
+          component: resolve => require(['@/pages/menu/menu'], resolve),
+        }, {
+          path: 'clicked',
+          name: 'clicked',
+          component: resolve => require(['@/pages/menu/clicked'], resolve),
+        }
+      ]
     },
     {
       path: '/order',
