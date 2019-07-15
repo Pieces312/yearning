@@ -9,7 +9,7 @@
         <!-- 菜单部分 -->
         <div class="menu-tabs">
             <Tabs :title="title">
-                <div class="common-title"><span class="line"></span> 热菜</div>
+                <!-- <div class="common-title"><span class="line"></span> 热菜</div> -->
                 <div class="food-type">
                     <div class="food-title"><span class="line"></span> 热菜</div>
                     <div class="food-list">
@@ -120,25 +120,18 @@ export default {
     height: 87%;
     position: relative;
 
-    .common-title {
-        padding: 10px 12px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        background: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-        .line {
-            margin-right: 5px;
-            width: 5px;
-            height: 10px;
-            background: #95b37f;
-        }
+    .food-type {
+        padding-bottom: 20px;
     }
 
     .food-title {
         padding: 10px 12px;
+        width: 100%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
         font-size: 15px;
+        background: #fff;
         border-bottom: 1px solid #ddd;
 
         .line {
