@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <div class="logo"><img src="../../assets/logo.png" alt=""></div>
+        <div class="logo"><img src="../../assets/images/logo.png" alt=""></div>
         
         <!-- 登录表单 -->
         <Form class="login-form">
