@@ -9,11 +9,26 @@
         <!-- 菜单部分 -->
         <div class="menu-tabs">
             <Tabs :title="title">
-                <div class="food-list">
-                    <div class="food-item" v-for="(item, index) in 10" :key="'foods'+item" :class="{'selected': index == 2}">
-                        <div class="food-img"><img src="http://site.meishij.net/r/185/123/1655935/a1655935_89415.jpg" alt=""></div>
-                        <div class="food-name">
-                            <p>鸡蛋炒虾仁</p>
+                <div class="common-title"><span class="line"></span> 热菜</div>
+                <div class="food-type">
+                    <div class="food-title"><span class="line"></span> 热菜</div>
+                    <div class="food-list">
+                        <div class="food-item" v-for="(item, index) in 10" :key="'foods'+item" :class="{'selected': index == 2}">
+                            <div class="food-img"><img src="http://site.meishij.net/r/185/123/1655935/a1655935_89415.jpg" alt=""></div>
+                            <div class="food-name">
+                                <p>回锅肉</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-type">
+                    <div class="food-title"><span class="line"></span> 素菜</div>
+                    <div class="food-list">
+                        <div class="food-item" v-for="(item, index) in 5" :key="'foods'+item" :class="{'selected': index == 2}">
+                            <div class="food-img"><img src="http://site.meishij.net/r/185/123/1655935/a1655935_89415.jpg" alt=""></div>
+                            <div class="food-name">
+                                <p>酸辣土豆丝</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,6 +56,11 @@ export default {
                 {label: '鲁菜'},
                 {label: '闽菜'},
             ]
+        }
+    },
+    methods: {
+        scrollHandle() {
+
         }
     }
 }
@@ -98,6 +118,36 @@ export default {
 
 .menu-tabs {
     height: 87%;
+    position: relative;
+
+    .common-title {
+        padding: 10px 12px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        .line {
+            margin-right: 5px;
+            width: 5px;
+            height: 10px;
+            background: #95b37f;
+        }
+    }
+
+    .food-title {
+        padding: 10px 12px;
+        font-size: 15px;
+        border-bottom: 1px solid #ddd;
+
+        .line {
+            margin-right: 5px;
+            width: 5px;
+            height: 10px;
+            background: #95b37f;
+        }
+    }
 
     .food-list {
         .food-item {
@@ -128,20 +178,26 @@ export default {
 // 已点菜单
 .clicked-menu {
     width: 50px;
-    height: 50px;
     position: fixed;
     right: 30px;
     bottom: 30px;
     z-index: 10;
     text-align: center;
-    background: #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,.15);
-    border-radius: 50%;
 
     .iconfont {
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
         line-height: 50px;
-        font-size: 32px;
+        font-size: 30px;
         color: #a2b98f;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,.15);
+        border-radius: 50%;
+
+        &:first-child {
+            font-size: 26 px;
+        }
     }
 }
 </style>

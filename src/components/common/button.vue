@@ -20,7 +20,7 @@ export default {
     font-size: 14px;
     line-height: 35px;
     transition: all .5s ease;
-    border-radius: 5px;
+    border-radius: @radius;
     background-color: @bgColor;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 
@@ -30,7 +30,7 @@ export default {
 }
 
 .y-button {
-    .Ybutton(var(--baseColor))
+    .Ybutton(#95b37f)
 }
 </style>
 
