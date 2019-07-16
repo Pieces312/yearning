@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import mixin from './utils/mixin'
+import directive from './directive/loading/loading'
 
 Vue.config.productionTip = false
 Vue.mixin(mixin);

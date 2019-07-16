@@ -1,7 +1,7 @@
 <template>
     <div class="menu">
         <div class="search">
-            <div class="input"><input type="text" placeholder="请输入你的搜索内容"></div>
+            <div class="input" v-loading><input type="text" placeholder="请输入你的搜索内容"></div>
             <div class="btn"><button>搜索</button></div>
         </div>
         <div class="tips"><span class="iconfont icon-tishi"></span> 提示：每人最多点3个主菜，2个素菜和1个汤</div>
@@ -62,9 +62,6 @@ export default {
                 {label: '闽菜'},
             ],
         }
-    },
-    mounted() {
-        console.log(this.scrollTop);
     },
     methods: {
         getScrollTop(top) {

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -41,4 +41,23 @@ export default new Router({
       component: resolve => require(['@/pages/order'], resolve)
     }
   ]
+});
+
+// 路由拦截
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+
+  // if(token === null) {
+  //   if(from.name !== "login") {
+  //     next({path: '/login'});
+  //   } else if (to.name !== "login") {
+  //     next({path: '/login'});
+  //   } else {
+  //     next()
+  //   }
+  // } else {
+    next()
+  // }
 })
+
+export default router;
