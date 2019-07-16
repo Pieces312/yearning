@@ -8,7 +8,7 @@
                 <span>{{item.label}}</span>
             </div>
         </div>
-        <div class="tab-content">
+        <div class="tab-content" ref="tabContent">
             <slot></slot>
         </div>
     </div>
@@ -28,15 +28,27 @@ export default {
             is_active: 0,
         }
     },
+    mounted() {
+        this.getScrollTop();
+    },
     methods: {
         changeIndex(index) {
             this.is_active = index;
             this.$emit('changeHandler', index);
+        },
+
+        getScrollTop() {
+            const cte = this.$refs.tabContent;
+            const _this = this;
+            
+            cte.addEventListener('scroll', function(e) {
+                const ev = e.target || e;
+                _this.$emit('getScrollTop', ev.scrollTop)
+            })
         }
     }
 }
 </script>
-
 
 <style lang="less" scoped>
 .tabs {

@@ -9,21 +9,21 @@
                 <div class="type"><span class="line"></span> 荤菜</div>
                 <div class="menu-item" v-for="(item, index) in 3" :key="'order'+index">
                     鱼香肉丝
-                    <span class="">查看操作</span>
+                    <span class="" @click="toPage('detail')">查看操作</span>
                 </div>
             </div>
             <div class="menu-type">
                 <div class="type"><span class="line"></span> 素菜</div>
                 <div class="menu-item" v-for="(item, index) in 2" :key="'order'+index">
                     干煸四季豆
-                    <span class="">查看操作</span>
+                    <span class="" @click="toPage('detail')">查看操作</span>
                 </div>
             </div>
             <div class="menu-type">
                 <div class="type"><span class="line"></span> 汤菜</div>
                 <div class="menu-item" v-for="(item, index) in 1" :key="'order'+index">
                     黄瓜皮蛋汤
-                    <span class="">查看操作</span>
+                    <span class="" @click="toPage('detail')">查看操作</span>
                 </div>
             </div>
         </div>

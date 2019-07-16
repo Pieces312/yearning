@@ -8,15 +8,19 @@
 
         <!-- 菜单部分 -->
         <div class="menu-tabs">
-            <Tabs :title="title">
+            <Tabs :title="title" @getScrollTop="getScrollTop">
                 <!-- <div class="common-title"><span class="line"></span> 热菜</div> -->
                 <div class="food-type">
                     <div class="food-title"><span class="line"></span> 热菜</div>
                     <div class="food-list">
-                        <div class="food-item" v-for="(item, index) in 10" :key="'foods'+item" :class="{'selected': index == 2}">
-                            <div class="food-img"><img src="http://site.meishij.net/r/185/123/1655935/a1655935_89415.jpg" alt=""></div>
+                        <div class="food-item" 
+                             v-for="(item, index) in 10" 
+                             :key="'foods'+item" 
+                             :class="{'selected': index == 2}"
+                             @click="toPage('detail', {id: index})">
+                            <div class="food-img"><img src="https://s1.st.meishij.net/r/208/121/13280458/s13280458_156320006820501.jpg" alt=""></div>
                             <div class="food-name">
-                                <p>回锅肉</p>
+                                <p>柠檬凤爪</p>
                             </div>
                         </div>
                     </div>
@@ -24,7 +28,8 @@
                 <div class="food-type">
                     <div class="food-title"><span class="line"></span> 素菜</div>
                     <div class="food-list">
-                        <div class="food-item" v-for="(item, index) in 5" :key="'foods'+item" :class="{'selected': index == 2}">
+                        <div class="food-item" v-for="(item, index) in 5" :key="'foods'+item" :class="{'selected': index == 2}"
+                             @click="toPage('detail')">
                             <div class="food-img"><img src="http://site.meishij.net/r/185/123/1655935/a1655935_89415.jpg" alt=""></div>
                             <div class="food-name">
                                 <p>酸辣土豆丝</p>
@@ -55,12 +60,15 @@ export default {
                 {label: '粤菜'},
                 {label: '鲁菜'},
                 {label: '闽菜'},
-            ]
+            ],
         }
     },
+    mounted() {
+        console.log(this.scrollTop);
+    },
     methods: {
-        scrollHandle() {
-
+        getScrollTop(top) {
+            this.scrollTop = top;
         }
     }
 }

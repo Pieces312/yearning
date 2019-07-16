@@ -22,7 +22,12 @@ export default new Router({
         {
           path: '',
           name: 'menu',
+          meta: {keepAlive: true},
           component: resolve => require(['@/pages/menu/menu'], resolve),
+        }, {
+          path: 'detail',
+          name: 'detail',
+          component: resolve => require(['@/pages/menu/detail'], resolve),
         }, {
           path: 'clicked',
           name: 'clicked',

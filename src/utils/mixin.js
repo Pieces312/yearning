@@ -1,4 +1,10 @@
 export default {
+    data() {
+        return {
+            scrollTop: 0,
+        }
+    },
+
     methods: {
         /**
          * @params name  {String} 跳转的路由名称
