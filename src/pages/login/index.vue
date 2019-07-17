@@ -31,6 +31,7 @@ export default {
     },
     methods: {
         submit() {
+            localStorage.setItem('token', 123);
             this.$router.push({name: 'home'})
         }
     }

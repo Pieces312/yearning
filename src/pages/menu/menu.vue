@@ -1,7 +1,7 @@
 <template>
-    <div class="menu">
+    <div class="menu" v-loading="loadingModal">
         <div class="search">
-            <div class="input" v-loading><input type="text" placeholder="请输入你的搜索内容"></div>
+            <div class="input"><input type="text" placeholder="请输入你的搜索内容"></div>
             <div class="btn"><button>搜索</button></div>
         </div>
         <div class="tips"><span class="iconfont icon-tishi"></span> 提示：每人最多点3个主菜，2个素菜和1个汤</div>
@@ -9,7 +9,6 @@
         <!-- 菜单部分 -->
         <div class="menu-tabs">
             <Tabs :title="title" @getScrollTop="getScrollTop">
-                <!-- <div class="common-title"><span class="line"></span> 热菜</div> -->
                 <div class="food-type">
                     <div class="food-title"><span class="line"></span> 热菜</div>
                     <div class="food-list">
@@ -61,7 +60,13 @@ export default {
                 {label: '鲁菜'},
                 {label: '闽菜'},
             ],
+            loadingModal: true
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.loadingModal = false;
+        }, 3000)
     },
     methods: {
         getScrollTop(top) {
@@ -71,12 +76,12 @@ export default {
 }
 </script>
 
-
 <style lang="less" scoped>
 .menu {
     height: 100%;
     overflow: hidden;
 }
+
 .search {
     padding: 5px 3.2%;
     height: 40px;

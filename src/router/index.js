@@ -45,19 +45,19 @@ const router = new Router({
 
 // 路由拦截
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('token');
+  let token = localStorage.getItem('token');
 
-  // if(token === null) {
-  //   if(from.name !== "login") {
-  //     next({path: '/login'});
-  //   } else if (to.name !== "login") {
-  //     next({path: '/login'});
-  //   } else {
-  //     next()
-  //   }
-  // } else {
-    next()
-  // }
+  if(token === null) {
+    if(to.name === 'home') {
+      next({name: 'login'});
+    } else if(to.name !== 'login') {
+      next({name: 'login'});
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 })
 
 export default router;

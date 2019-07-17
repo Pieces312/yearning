@@ -6,4 +6,48 @@
     left: 0;
     z-index: 99;
     background: rgba(255,255,255,.3);
+
+    .mask-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span {
+            margin: 0 5px;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 22px;
+            color: #fff;
+            border-radius: 50%;
+            background: #95b37f;
+            animation: loading_1 .5s ease infinite alternate;
+
+            &.loading_2 {
+                animation: loading_2 .5s ease infinite alternate;
+            }
+        }
+    }
+}
+
+@keyframes loading_1 {
+    from {
+        transform: translateY(5px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loading_2 {
+    from {
+        transform: translateY(-5px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
